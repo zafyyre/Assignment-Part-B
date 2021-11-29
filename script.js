@@ -125,8 +125,136 @@ function renderView(contactList) {
 }
 
 function cleanUpCreate() {
-    const main = document.querySelector(".contactedit")
+    const main = document.querySelector(".main")
     while (main.firstChild) {
         main.removeChild(main.firstChild);
     }
+}
+
+function renderCreate() {
+    //1st div
+    let contactname = document.createElement('input');
+    contactname.setAttribute('type', 'text');
+    contactname.setAttribute('id', 'contactname');
+    contactname.setAttribute('name', 'contactname');
+    contactname.setAttribute('placeholder', 'Contact Name');
+
+    let namefield = document.createElement('button');
+    namefield.setAttribute('class', 'extrafield');
+    namefield.setAttribute('id', 'extranamefield');
+    namefield.setAttribute('name', 'extranamefield');
+    namefield.textContent = '+';
+
+    let div1 = document.createElement('div');
+    div1.setAttribute('class', 'inputcontainer');
+    div1.appendChild(contactname);
+    div1.appendChild(namefield);
+
+    //2nd div
+    let contactphone = document.createElement('input');
+    contactphone.setAttribute('type', 'tel');
+    contactphone.setAttribute('id', 'contactphone');
+    contactphone.setAttribute('name', 'contactphone');
+    contactphone.setAttribute('placeholder', 'Contact Phone');
+
+    let phonefield = document.createElement('button');
+    phonefield.setAttribute('class', 'extrafield');
+    phonefield.setAttribute('id', 'extraphonefield');
+    phonefield.setAttribute('name', 'extraphonefield');
+    phonefield.textContent = '+';
+
+    let div2 = document.createElement('div');
+    div2.setAttribute('class', 'inputcontainer');
+    div2.appendChild(contactphone);
+    div2.appendChild(phonefield);
+
+    //3rd div
+    let contactaddress = document.createElement('input');
+    contactaddress.setAttribute('type', 'text');
+    contactaddress.setAttribute('id', 'contactaddress');
+    contactaddress.setAttribute('name', 'contactaddress');
+    contactaddress.setAttribute('placeholder', 'Contact Address');
+
+    let addressfield = document.createElement('button');
+    addressfield.setAttribute('class', 'extrafield');
+    addressfield.setAttribute('id', 'extraaddressfield');
+    addressfield.setAttribute('name', 'extraaddressfield');
+    addressfield.textContent = '+';
+
+    let div3 = document.createElement('div');
+    div3.setAttribute('class', 'inputcontainer');
+    div3.appendChild(contactaddress);
+    div3.appendChild(addressfield);
+
+    //4th div
+    let contactemail = document.createElement('input');
+    contactemail.setAttribute('type', 'email');
+    contactemail.setAttribute('id', 'contactemail');
+    contactemail.setAttribute('name', 'contactemail');
+    contactemail.setAttribute('placeholder', 'Contact Email');
+
+    let emailfield = document.createElement('button');
+    emailfield.setAttribute('class', 'extrafield');
+    emailfield.setAttribute('id', 'extraemailfield');
+    emailfield.setAttribute('name', 'extraemailfield');
+    emailfield.textContent = '+';
+
+    let div4 = document.createElement('div');
+    div4.setAttribute('class', 'inputcontainer');
+    div4.appendChild(contactemail);
+    div4.appendChild(emailfield);
+
+    //buttons
+    let save = document.createElement('button');
+    save.setAttribute('type', 'submit');
+    save.setAttribute('class', 'button save');
+    save.setAttribute('id', 'savecontact');
+    save.setAttribute('name', 'savecontact');
+    save.textContent = 'Save Contact';
+
+    let cancel = document.createElement('button');
+    cancel.setAttribute('type', 'reset');
+    cancel.setAttribute('class', 'button cancel');
+    cancel.setAttribute('id', 'cancel');
+    cancel.setAttribute('name', 'cancel');
+    cancel.textContent = 'Cancel';
+
+    let divbuttons = document.createElement('div');
+    divbuttons.setAttribute('class', 'buttons');
+    divbuttons.appendChild(save);
+    divbuttons.appendChild(cancel);
+
+    //adding under parents
+    let literalform = document.createElement('form');
+    literalform.appendChild(div1);
+    literalform.appendChild(div2);
+    literalform.appendChild(div3);
+    literalform.appendChild(div4);
+    literalform.appendChild(divbuttons);
+
+    let form = document.createElement('div');
+    form.setAttribute('class', 'form');
+    form.appendChild(literalform);
+
+    //img
+    let img = document.createElement('img');
+    img.setAttribute('src', './img/profile.jpg');
+    img.setAttribute('class', 'profilepic');
+    img.setAttribute('alt', 'Profile picture');
+
+    let contactimg = document.createElement('div');
+    contactimg.setAttribute('class', 'contactimg')
+    contactimg.appendChild(img);
+
+    let contactedit = document.createElement('div');
+    contactedit.setAttribute('class', 'contactedit');
+    contactedit.appendChild(contactimg);
+    contactedit.appendChild(form);
+
+    let main = document.createElement('div');
+    main.setAttribute('class', 'main');
+    main.appendChild(contactedit);
+    document.body.appendChild(main)
+
+
 }
