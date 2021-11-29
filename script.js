@@ -1,7 +1,11 @@
+// Index Page
 function cleanupindex() {
     const main = document.querySelector(".main")
-    while (main.firstChild) {
-        main.removeChild(main.firstChild);
+    const p = document.querySelector('p');
+    if (p.textContent = 'Barry Allen') {
+        while (main.firstChild) {
+            main.removeChild(main.firstChild);
+        }
     }
 }
 
@@ -62,14 +66,18 @@ function renderIndex(contactList) {
         p.textContent = `${contactList[i]["name"]}`;
         let main = document.querySelector(".main");
         main.appendChild(a)
+        document.body.appendChild(main);
     }
 }
 
+// View Page
 function cleanUpView() {
-    const main = document.querySelector(".contactinfo")
-    while (main.firstChild) {
-        main.removeChild(main.firstChild);
-    }
+    const main = document.querySelector(".main");
+    const contactname = document.querySelector(".contactname");
+    if (contactname.textContent = 'Raquel Ervin')
+        while (main.firstChild) {
+            main.removeChild(main.firstChild);
+        }
 }
 
 function renderView(contactList) {
@@ -94,7 +102,7 @@ function renderView(contactList) {
 
     let contactphone = document.createElement('div');
     contactphone.setAttribute('class', 'contactphone');
-    contactphone.textContent = `phone: ${contactList[1]["phone"]}`;
+    contactphone.textContent = `cell: ${contactList[1]["phone"]}`;
     contactinfo.appendChild(contactphone);
 
     let contactaddress = document.createElement('div');
@@ -125,10 +133,12 @@ function renderView(contactList) {
 }
 
 function cleanUpCreate() {
-    const main = document.querySelector(".main")
-    while (main.firstChild) {
-        main.removeChild(main.firstChild);
-    }
+    const main = document.querySelector(".main");
+    const button = document.querySelector("#extraphonefield");
+    if (button.textContent = '+')
+        while (main.firstChild) {
+            main.removeChild(main.firstChild);
+        }
 }
 
 function renderCreate() {
@@ -255,6 +265,5 @@ function renderCreate() {
     main.setAttribute('class', 'main');
     main.appendChild(contactedit);
     document.body.appendChild(main)
-
 
 }
