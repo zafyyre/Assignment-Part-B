@@ -80,7 +80,7 @@ function renderView(contactList) {
 
     let contactname = document.createElement('div');
     contactname.setAttribute('class', 'contactname');
-    contactname.textContent = `name: ${contactList[1]["name"]}`;
+    contactname.textContent = `${contactList[1]["name"]}`;
     contactname.appendChild(img);
 
     let contactinfo = document.createElement('div');
@@ -122,4 +122,11 @@ function renderView(contactList) {
     main.setAttribute('class', 'main');
     main.appendChild(contactinfo)
     document.body.appendChild(main)
+}
+
+function cleanUpCreate() {
+    const main = document.querySelector(".contactedit")
+    while (main.firstChild) {
+        main.removeChild(main.firstChild);
+    }
 }
