@@ -64,3 +64,10 @@ function renderIndex(contactList) {
         main.appendChild(a)
     }
 }
+
+function cleanUpView() {
+    const main = document.querySelector(".contactinfo")
+    while (main.firstChild) {
+        main.removeChild(main.firstChild);
+    }
+}
